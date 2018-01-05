@@ -1,2 +1,2 @@
-# exq_gal
-Exquisite Galleria, a WordPress theme for photographers.
+# Exquisite Galleria
+A clean and responsive WordPress theme for photographers.
