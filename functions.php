@@ -23,11 +23,13 @@
 		'header-text' => array( 'site-title', 'site-description' ),
 	) );
 
+	add_theme_support( 'post-thumbnails' );
+
 
 	function theme_setup() {
 		register_nav_menus(array(
-			'primary' => __('Main Menu'),
-			'front-page' => __('Front Page')
+			'exq-gal-primary-menu'      => __('Main Menu'),
+			'exq-gal-social-media-menu' => __('Social Media Links')
 		));
 
 		add_menu();
@@ -71,6 +73,45 @@
 			));
 		}
 	}
+
+	function exq_gal_customize_social($wp_customize) {
+
+		$wp_customize->add_section('social_media_links', array(
+			'title'           => 'Social Media Links',
+			'description'     => __('Displays a set of icons that link to your social media accounts.'),
+			'priority'        => 130
+
+		));
+
+		$wp_customize->add_setting('social_icon', array(
+			'label'    => 'icon setting',
+			'priority' => 4
+		));
+
+		$wp_customize->add_control('social_icon', array(
+			'label'    => 'Icon',
+			'section'  => 'social_media_links',
+			'type'     => 'select',
+			'choices'  => array(
+				'Facebook', 'Instagram', 'Twitter'
+			)
+
+		));
+
+		$wp_customize->add_setting('social_url', array(
+			'label'    => 'url',
+			'priority' => 5,
+		));
+
+		$wp_customize->add_control('social_url', array(
+			'label'    => 'Url',
+			'section'  => 'social_media_links',
+			'type'     => 'text'
+		));
+
+	}
+
+	add_action('customize_register', 'exq_gal_customize_social');
 	
 	function themeslug_enqueue_style() {
 		wp_enqueue_style( 'style', get_stylesheet_uri() );
@@ -83,4 +124,9 @@
 	add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_style' );
 	add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );
 
-?>
+	register_sidebar();
+	register_sidebar(array(
+		'name' => 'social_media'
+	));
+
+	

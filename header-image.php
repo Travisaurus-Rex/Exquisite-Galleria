@@ -4,22 +4,22 @@
 	<meta charset="<?php bloginfo('charset') ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 	<title><?php bloginfo('name') ?></title>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300" rel="stylesheet">
 	<link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 <body>
-	<nav class="main-menu">
-	<?php
-		wp_nav_menu( array(
-			'menu' => 'Main Menu'
-		) );
-	?>
-	</nav>
 	<header class="header-image" style="background-image: linear-gradient(
 													rgba(0, 0, 0, 0.3), 
 													rgba(0, 0, 0, 0.3)
 												), url(<?php header_image() ?>)">
+		<nav class="image-menu">
+		<?php
+			wp_nav_menu( array(
+				'menu' => 'Main Menu'
+			) );
+		?>
+		</nav>
 		<div class="fp-header-text-container">
 			<?php 
 				if( has_custom_logo() && display_header_text() ) :
@@ -46,10 +46,8 @@
 				endif;
 			?>
 		</div>
+		<div class="social-media-container">
+			<?php dynamic_sidebar('social_media') ?>
+		</div>
 	</header>
-	<div class="social-media-container">
-		<i class="fab fa-facebook-square"></i>
-		<i class="fab fa-instagram"></i>
-		<i class="fab fa-twitter"></i>
-	</div>
 
