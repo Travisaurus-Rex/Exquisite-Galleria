@@ -1,0 +1,29 @@
+{
+  "name": "gallery",
+  "version": "1.0.0",
+  "description": "Wordpress theme for galleries",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Travisaurus-Rex/Exquisite-Galleria.git"
+  },
+  "keywords": [
+    "wordpress",
+    "gallery"
+  ],
+  "author": "Travis Adams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Travisaurus-Rex/Exquisite-Galleria/issues"
+  },
+  "homepage": "https://github.com/Travisaurus-Rex/Exquisite-Galleria#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.7",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^4.0.1"
+  }
+}

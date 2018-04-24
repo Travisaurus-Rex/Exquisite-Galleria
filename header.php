@@ -5,7 +5,7 @@
 	<meta charset="<?php bloginfo('charset') ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 	<title><?php bloginfo('name') ?></title>
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,300" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,300|Playfair+Display:400,700,900" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 <body>

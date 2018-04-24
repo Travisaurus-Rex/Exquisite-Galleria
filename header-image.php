@@ -4,14 +4,14 @@
 	<meta charset="<?php bloginfo('charset') ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 	<title><?php bloginfo('name') ?></title>
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300|Lora:400,700" rel="stylesheet">
 	<link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 <body>
 	<header class="header-image" style="background-image: linear-gradient(
-													rgba(0, 0, 0, 0.3), 
-													rgba(0, 0, 0, 0.3)
+													rgba(0, 0, 0, 0.4), 
+													rgba(0, 0, 0, 0.4)
 												), url(<?php header_image() ?>)">
 		<nav class="image-menu">
 		<?php
@@ -46,8 +46,55 @@
 				endif;
 			?>
 		</div>
-		<div class="social-media-container">
-			<?php dynamic_sidebar('social_media') ?>
-		</div>
+
+		<?php if ( check_social_media_fields() ) : ?>
+
+			<div class="social-media-container">
+
+				<?php if ( get_field('facebook') ) : ?>
+
+					<a target="__blank" href="<?php the_field('facebook') ?>"><i class="fab fa-facebook-f"></i></a>
+
+				<?php endif; ?>
+
+				<?php if ( get_field('twitter') ) : ?>
+
+					<a target="__blank" href="<?php the_field('twitter') ?>"><i class="fab fa-twitter"></i></a>
+
+				<?php endif; ?>
+
+				<?php if ( get_field('instagram') ) : ?>
+
+					<a target="__blank" href="<?php the_field('instagram') ?>"><i class="fab fa-instagram"></i></a>
+
+				<?php endif; ?>
+
+				<?php if ( get_field('youtube') ) : ?>
+
+					<a target="__blank" href="<?php the_field('youtube') ?>"><i class="fab fa-youtube"></i></a>
+
+				<?php endif; ?>
+
+				<?php if ( get_field('dribbble') ) : ?>
+
+					<a target="__blank" href="<?php the_field('dribbble') ?>"><i class="fab fa-dribbble"></i></a>
+
+				<?php endif; ?>
+
+				<?php if ( get_field('linkedin') ) : ?>
+
+					<a target="__blank" href="<?php the_field('linkedin') ?>"><i class="fab fa-linkedin-in"></i></a>
+
+				<?php endif; ?>
+
+				<?php if ( get_field('behance') ) : ?>
+
+					<a target="__blank" href="<?php the_field('behance') ?>"><i class="fab fa-behance"></i></a>
+
+				<?php endif; ?>
+
+			</div>
+
+		<?php endif; ?>
 	</header>
 

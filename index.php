@@ -1,12 +1,16 @@
-<?php
-	if ( have_posts() ) : while ( have_posts() ) : the_post();
+<?php get_header() ?>
+
+<h1>This is the real blog page, coming from index.php</h1>
+
+<?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
+
+
+
+		<h1><?php the_title();?></h1>
+
+		<div><?php the_content(); ?></div>
+
+		<?php
+			endwhile;
+			endif;
 		?>
-<div>
-	<h3>This is the index page</h3>
-	<h1><?php the_title()?></h1>
-	<?php the_content() ?>
-</div>
-<?php
-	endwhile;
-	endif; 
-?>
