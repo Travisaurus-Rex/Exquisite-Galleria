@@ -31,3 +31,4 @@
 			?>
 			</article>
 </div>
+<?php get_footer(); ?>

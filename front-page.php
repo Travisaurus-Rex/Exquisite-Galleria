@@ -72,15 +72,19 @@
 
 					<?php if ( has_post_thumbnail() ) : ?>
 						<?php $img = get_the_post_thumbnail_url('', 'medium'); ?>
-						<a href="<?php the_permalink(); ?>">
+						<a class="post-snippet-link" href="<?php the_permalink(); ?>">
 							<div class="post-snippet-thumbnail-background" style="background-image: url(<?php echo $img ?>);">
-								<span class="post-snippet-date"><?php the_time( get_option( 'date_format' ) ) ?></span>
+								<span class="post-snippet-title-mobile">
+									<?php the_title(); ?>
+								</span>	
 							</div>
 						</a>
+						<h5 class="post-snippet-title"><?php the_title(); ?></h5>
+						<p class="post-snippet-excerpt">
+							<?php echo get_the_excerpt(); ?>
+						</p>
 
 					<?php endif; ?>
-					<h5 class="post-snippet-title"><?php the_title(); ?></h5>
-					<?php the_excerpt(); ?>
 				</article>
 
 			<?php endwhile; ?>
